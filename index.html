@@ -54,7 +54,11 @@
                     ctx.strokeText("Les rencombrements", randint(-200,canvas.width), randint(-50, canvas.height));
                 }
                 ctx.fill();
+                if((Math.floor(Math.random()*100)) < 5){
+                    document.location = "c28.html";
+                }
             }
+            
             window.requestAnimationFrame(draw);
         }
         
