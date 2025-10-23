@@ -21,14 +21,17 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const ctx = canvas.getContext('2d');
-        ctx.fillStyle = "#f8f6d2";
-        ctx.strokeStyle = "#f8f6d2";
+        
 
         const lstFonts = [
             "Arial", "Verdana", 
             "Tahoma", "Times New Roman", 
             "Georgia", "Garamond", 
             "Courier New", "Brush Script MT", "monospace"
+        ];
+
+        const lstCol = [
+            "#f8f6d2", "#f8d2d2", "d2f8d2"
         ];
 
         function randint(min, max){
@@ -41,6 +44,10 @@
                 idxFrame = 0;
                 let fnt = "" + randint(10,100) + "px " + lstFonts[randint(0, lstFonts.length)];
                 ctx.font = fnt; 
+
+                ctx.fillStyle = lstCol[randint(0, lstCol.length)];
+                ctx.strokeStyle = lstCol[randint(0, lstCol.length)];
+
                 if(randint(0,10) < 5){
                     ctx.fillText("Les Rencombrements", randint(-200,canvas.width), randint(-50, canvas.height));
                 }else{
