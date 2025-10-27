@@ -1,0 +1,13 @@
+.ctn{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+    text-align: justify;
+}
+body {
+    margin: 0;
+    background-color: #121212;
+    color: #f8f6d2;
+    font-family: monospace;
+    font-size: 1.2em;
+}

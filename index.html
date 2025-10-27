@@ -22,6 +22,13 @@
         canvas.height = window.innerHeight;
         const ctx = canvas.getContext('2d');
         
+        const lstPg = [
+            "c28.html",
+            "tordeuze.html",
+            "lazy/stoire01.html",
+            "lazy/stoire02.html",
+            "lazy/stoire03.html",
+        ];
 
         const lstFonts = [
             "Arial", "Verdana", 
@@ -41,12 +48,11 @@
         function draw() {
             idxFrame++;
             if (idxFrame % 20 == 0){
-                idxFrame = 0;
                 let fnt = "" + randint(10,100) + "px " + lstFonts[randint(0, lstFonts.length)];
                 ctx.font = fnt; 
 
-                ctx.fillStyle = lstCol[randint(0, lstCol.length)];
-                ctx.strokeStyle = lstCol[randint(0, lstCol.length)];
+                ctx.fillStyle = lstCol[randint(0, lstCol.length-1)];
+                ctx.strokeStyle = lstCol[randint(0, lstCol.length-1)];
 
                 if(randint(0,10) < 5){
                     ctx.fillText("Les Rencombrements", randint(-200,canvas.width), randint(-50, canvas.height));
@@ -54,9 +60,11 @@
                     ctx.strokeText("Les rencombrements", randint(-200,canvas.width), randint(-50, canvas.height));
                 }
                 ctx.fill();
-                if((Math.floor(Math.random()*100)) < 5){
-                    document.location = "c28.html";
-                }
+                
+            }
+
+            if(idxFrame % 1200 == 0){
+                document.location = lstPg[randint(0, lstPg.length-1)];
             }
             
             window.requestAnimationFrame(draw);
