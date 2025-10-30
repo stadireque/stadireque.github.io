@@ -4,32 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Les Rencombrements</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #121212;
-            color: #f8f6d2;
-        }
-    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="img/r.ico" />
+    <link rel="stylesheet" href="css/sw.css" />
 </head>
 
 <body>
     <canvas id="c"></canvas>
+    
+    <script src="js/bateau.js"></script>
     <script>
         var idxFrame = 0;
         const canvas = document.getElementById('c');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const ctx = canvas.getContext('2d');
-        
-        const lstPg = [
-            "c28.html",
-            "tordeuze.html",
-            "lazy/stoire01.html",
-            "lazy/stoire02.html",
-            "lazy/stoire03.html",
-        ];
-
         const lstFonts = [
             "Arial", "Verdana", 
             "Tahoma", "Times New Roman", 
@@ -63,8 +51,12 @@
                 
             }
 
-            if(idxFrame % 1200 == 0){
-                document.location = lstPg[randint(0, lstPg.length-1)];
+            if(idxFrame > 444){
+                // document.location = les_flots[randint(0, les_flots.length-1)];
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+                flotter();
+
+                return;
             }
             
             window.requestAnimationFrame(draw);

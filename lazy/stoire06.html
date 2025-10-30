@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 006</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Jeudi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `Dans le village de Ravencroft, perdu entre des collines embrumées, se tenait une vieille horloge qui n’avait jamais marqué minuit. On racontait que le jour où elle sonnerait douze coups, un voile ancien serait levé.
+
+M. Delacroix, un horloger aveugle, avait hérité de la charge de veiller sur cette horloge. Il en connaissait chaque mécanisme, même si ses yeux ne pouvaient plus voir. Les villageois, respectueux et quelque peu craintifs de cette horloge, évitaient de passer trop près de la tour, surtout à la nuit tombée. Ils chuchotaient que parfois, des voix inhumaines s’échappaient de son mécanisme complexe.
+
+Une nuit d'orage, alors que le vent hurlait comme pour avertir d’un malheur imminent, une silhouette encapuchonnée apparut sur la place du village, se dirigeant droit vers la tour de l'horloge. Les gens du village, observant derrière des fenêtres embuées, sentaient une inquiétude grandir.
+
+L'inconnu s'introduisit dans la tour. M. Delacroix, ressentant une présence, se précipita à tâtons vers l'horloge. Dans le noir, leurs mains se frôlèrent et un murmure glacial traversa la pièce : "L'heure est venue."
+
+Soudain, le mécanisme de l'horloge se mit en mouvement. L'horloger, avec des gestes frénétiques mais précis, tenta de stopper l'engrenage, mais c'était trop tard. Le tintement lointain et désaccordé du premier coup de minuit résonna, suivit de près par les autres. À chaque battement, la réalité semblait se tordre et osciller.
+
+Au douzième coup, un cri déchirant s'éleva, mélange de terreur et de libération. Quand les villageois osèrent finalement sortir, la tour de l'horloge était étrangement silencieuse, l’orage ayant passé. Ils retrouvèrent M. Delacroix seul, murmure encore à ses lèvres : "Elle est libérée."
+
+Au matin, la silhouette encapuchonnée était introuvable, comme dissoute dans l'air vicié du mystère. L'horloge, elle, demeurait éternellement figée à minuit, silence imposé ou garde fidèle d'un secret nouvellement libéré.
+
+Depuis ce jour, la peur et le mystère n’ont jamais quitté les âmes de Ravencroft.
+`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('p');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>

@@ -12,13 +12,8 @@
             padding: auto;
             background-image: url("./img/chel.jpg");
         }
-        body {
-            margin: 0;
-            background-color: #121212;
-            color: #f8f6d2;
-            font-family: monospace;
-        }
     </style>
+    <link rel="stylesheet" href="/css/sw.css" />
 </head>
 
 <body>
@@ -26,6 +21,7 @@
         <h1>C28</h1>
         <p>Protocole CHEL</p>
     </div>
+    <script src="/js/bateau.js"></script>
     <script>
         const ctn = document.getElementById("ctn");
         var sx = 1;
@@ -68,6 +64,7 @@
         }
 
         window.requestAnimationFrame(draw);
+        flotter();
     </script>
 </body>
 

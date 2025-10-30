@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    background-color: #121212;
+    color: #f8f6d2;
+    font-family: monospace;
+}
+
+a{
+    color: #3efaa2;
+    text-decoration: none;
+    font-size: 12px;
+}
+a:visited{
+    color: #a9dbc4;
+}
+a:hover{
+    text-decoration: dashed;
+}
+
+.navire{
+    position: absolute;
+    margin: 0;
+}
+.navire > li{
+    list-style: none;
+}

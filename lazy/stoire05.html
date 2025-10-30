@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 005</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Mercredi</h1>
+        <div id="hist"></div>
+    </div>
+
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `Dans le petit village de Saint-Agathe, perdu entre les collines embrumées de Normandie, les anciens racontaient une légende oubliée aux racines ténébreuses. Ils murmuraient à l'oreille attentive des plus intrépides, ou insouciants, l’histoire de la créature de l’étang d’Ombreval.
+
+La légende disait qu’au coeur de l’étang, un monolithe noire, lisse comme un miroir mais froid comme la nuit, abritait une créature sans nom, une aberration du temps et de la nature, dormant dans une fissure entre les mondes. Aucun reflet ne troublait la surface de cette eau sombre, comme si la lumière elle-même craignait de révéler ce qui y reposait.
+
+Marie, une jeunesse du village, fascinée par ces contes, se rendit une nuit d’éclipse au bord de cet étang, guidée par un mélange de terreur et de fascination. L'air était vif, chargé d'une électricité palpable, comme si le voile entre les deux mondes s'amincissait. Arrivée au bord de l'eau, elle murmura une ancienne incantation que son grand-père lui avait enseignée, à mi-chemin entre la prière et la malédiction.
+
+À mesure qu'elle parlait, la surface de l’eau se mit à frémir, puis à bouillonner. Un brouillard épais surgit, cachant tout sauf le monolithe, qui maintenant semblait luire d’une phosphorescence maladive. Le brouillard se densifia, se tordant en formes grotesques, presque humaines, qui se penchaient vers elle avec une curiosité malsaine.
+
+Marie ne pouvait détourner les yeux du monolithe ; elle sentit quelque chose s’éveiller, un grondement sourd, comme le début d’un tremblement de terre. Une voix, ni masculine ni féminine, résonna, un murmure dans toutes les langues et aucune, demandant un tribut pour l’éternité.
+
+Paralysée de peur, elle n’eut pas le temps de fuir. L’eau gelée de l'étang se mit à monter, la silhouette de Marie se reflétant pour la première fois sur la surface noire. Elle fut alors engloutie, absorbée par l’étang qui ne la rendit jamais.
+
+Depuis cette nuit, les habitants de Saint-Agathe évitent l'étang d'Ombreval. Certains nuits, disent-ils, on peut encore voir le reflet de Marie flotter juste sous la surface, ses lèvres bleues murmurant des avertissements à ceux osant trop s'approcher.
+
+`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('p');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+
+        flotter();
+    </script>
+</body>
+
+</html>
