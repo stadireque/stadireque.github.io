@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 007</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Vendredi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+>sois moi, 30 ans, écrivain raté
+>vivais dans une maison vieille et délabrée à la campagne, seul
+>trouve un vieux grimoire dans le grenier un soir
+>couverture noire, sans aucun texte
+>décide de l'ouvrir, pour la curiosité
+
+>première page, une incantation écrite à la main
+>me semble vieille, presque effacée
+>lit à voix haute, juste pour le fun
+>sent une brise froide traverser la pièce
+>pas de fenêtres ouvertes
+
+>les nuits suivantes, commence à entendre des bruits
+>des grincements, des murmures dans les murs
+>suis-je juste fatigué ou quoi?
+>chaque nuit, ça s'intensifie
+>commence vraiment à paniquer
+
+>une semaine plus tard, vois des ombres se déplacer dans le coin de mes yeux
+>ne sont jamais là quand je regarde directement
+>la peur devient palpable, peux presque la sentir respirer
+>un soir, ça culmine
+
+>s'assied dans le salon, essayant d'ignorer
+>soudainement, une ombre se tient dans le couloir, grande et menaçante
+>incapable de bouger ou de crier
+>l'ombre se rapproche lentement
+>peux sentir son souffle glacé
+
+>au moment où elle est sur moi, tend une main noire
+>réalise que c'était une mauvaise idée de lire cette incantation
+>l'ombre murmure "Libéré"
+>le corps se sent lourd, vue s'assombrit
+>fin
+
+>n'ouvre jamais de vieux grimoires trouvés dans ton grenier
+`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('pre');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>

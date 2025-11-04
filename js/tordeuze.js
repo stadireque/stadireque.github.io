@@ -30,7 +30,7 @@ function main(){
     // float vec4 vPos;
     // highp vec4 vPos;
 
-    // nécessaire sinon il râle qu'on n'a pas défini de précision sur les vec4 (on peut mettre highp,je suppose lowp)
+    // nécessaire sinon il râle qu'on n'a pas défini de précision sur les vec4 (on peut mettre highp)
     // precision mediump float; 
     precision lowp float; 
 
@@ -145,7 +145,7 @@ function draw(gl, progInfo, posBuffer, numFrame){
     mat4.translate(
         modelViewMatrix, // destination matrix
         modelViewMatrix, // matrix to translate
-        [-0.0, 0.0, (-10 * Math.sin(numFrame))-15],
+        [-1.0, 1.0, (-9 * Math.sin(numFrame))-15],
     );
 
     // la ptite rotation maison là
@@ -183,7 +183,7 @@ function draw(gl, progInfo, posBuffer, numFrame){
     for(let c=0; c < 10; c++){
         // modelViewMatrix = savMat;
         mat4.translate(modelViewMatrix, modelViewMatrix, [2.0, 0.5, 0.0]);
-        mat4.rotate(modelViewMatrix, modelViewMatrix, numFrame, [0.0, 0.0, 1.0]); 
+        mat4.rotate(modelViewMatrix, modelViewMatrix, numFrame/2, [0.0, 0.0, 1.0]); 
         gl.uniformMatrix4fv(progInfo.modViewMat,false,modelViewMatrix);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
     }

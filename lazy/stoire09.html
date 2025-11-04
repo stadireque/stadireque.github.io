@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 009</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Mardi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+Dans la petite ville de Saint-Hilaire, perdue au milieu des marais, les brumes méandreuses répandaient des chuchotements qui s'égrenaient bien après la tombée du crépuscule. Romain, un jeune bibliothécaire nouvellement nommé, découvrit un livre ancien caché dans un tiroir verrouillé de son bureau. La couverture était de cuir noirci par le temps, sans titre ni auteur, seulement ornée d’une étrange glyph symbole ressemblant à un œil entrelacé de tentacules.
+
+Intrigué et ignorant les mises en garde gravées en lettres à peine visibles sur la tranche du livre, Romain ouvrit l'ouvrage à la lumière vacillante de sa lampe. À mesure qu'il lisait, les mots semblèrent danser, se tordre et s'enrouler autour de sa perception, susurrant des secrets sombres de mondes anciens et oubliés, habités par des créatures difformes évoluant dans des dimensions incompréhensibles pour l'esprit humain. Chaque page tournée paraissait l'entraîner plus profondément dans un gouffre spirituel delirant.
+
+Rapidement, Romain commença à percevoir des changements dans la petite ville. Les murmures des marais se faisaient insistants, les ombres s'allongeaient d'une manière anormale même à midi, et les habitants affichaient des regards vide d'expression. Une nuit, alors que des rêves fiévreux peuplés de visions cauchemardesques le tourmentaient incessamment, le bibliothécaire se réveilla pour trouver le livre ouvert sur son bureau, alors qu'il était certain de l'avoir laissé fermé.
+
+Hanté par la nécessité de comprendre ce qu'il avait déclenché, Romain continua sa lecture, chaque mot le plongeant plus loin dans la folie jusqu'à ce qu'il réalise que le livre n'était pas simplement un texte, mais un portail. Un lien direct avec un ancien dieu endormi des profondeurs, réveillé à présent par la curiosité d'un humain.
+
+Les conséquences furent immédiates et terribles. Comme un écho surgi des âges, des formes grotesques émergèrent des marais, plongeant Saint-Hilaire dans une nuit éternelle d'horreur. Romain, dont l'esprit ne tenait plus qu'à un fil, fut le seul témoin de cette coupure avec la réalité, confronté à l'irréalité de son existence devenue une partie intégrante du domaine du Dieu vieux, surveillé éternellement par l'œil aux tentacules que ni la lumière, ni l'espérance ne pouvaient plus atteindre.
+`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('p');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>

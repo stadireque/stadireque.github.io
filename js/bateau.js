@@ -9,6 +9,9 @@ const les_flots = [
     "/lazy/stoire04.html",
     "/lazy/stoire05.html",
     "/lazy/stoire06.html",
+    "/lazy/stoire07.html",
+    "/lazy/stoire08.html",
+    "/lazy/stoire09.html",
 ];
 
 function flotter(){

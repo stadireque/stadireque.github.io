@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 008</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Lundi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+Dans le petit village de Saint-Armand, isolé entre des collines brumeuses, les habitants murmuraient l'existence d'une maison abandonnée depuis des générations, enveloppée d'une aura aussi noire que les corbeaux qui en faisaient leur demeure. On la nommait "la Demeure du Soupir".
+
+Un soir d'automne, alors que le vent faisait crisser les branches dénudées, Élise, une jeune fille intrépide nourrie par les légendes du village, décida de percer le secret de la Demeure. Elle emporta juste une lanterne pour éclairer son chemin à travers les sentiers enveloppés de brouillard.
+
+Arrivée devant la maison, son cœur battait à la chamade. La porte craqua sinistrement lorsqu’elle la poussa. À l’intérieur, les meubles recouverts de draps semblaient des spectres figés dans le temps. En explorant, elle découvrit un vieux journal poussiéreux sur une table. L’encre des pages semblait fraîche comme si elles avaient été écrites hier. Chaque page décrivait précisément sa journée, ses pensées, ses mouvements, jusque dans cette maison.
+
+Terrifiée, Élise leva les yeux et vit dans le reflet brisé d’un miroir une ombre qui la scrutait. Elle se retourna vivement, mais il n’y avait personne. La lanterne s’éteignit subitement, et elle entendit le murmure glacé de la maison qui lui disait : "Tu fais désormais partie de mon histoire."
+
+Elle courut vers la porte et la franchit en trébuchant, sans jamais oser regarder derrière elle. Les villageois la retrouvèrent au matin, frissonnante, à l’entrée du chemin menant à la maison, incapable de parler de ce qu’elle avait vécu.
+
+Depuis ce jour, personne n’a osé s’approcher de la Demeure du Soupir, mais les nuits de pleine lune, on peut apercevoir une silhouette errant près de la maison, lanterne à la main, comme si elle cherchait désespérément à en échapper.
+`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('p');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>
