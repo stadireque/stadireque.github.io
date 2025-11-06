@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 011</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Jeurdi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+>sois moi, chômeur et amateur d'histoires paranormales
+>il y a deux semaines, trouve un vieux livre sur les légendes locales dans un vide-grenier
+>le bouquin est bizarre, couverture en cuir, sans titre
+>commence à lire, il parle d'un esprit qui visite ceux qui connaissent son nom
+>juste une légende hein ?
+>continue à lire, obsessivement, tous les jours
+>arrive à la dernière page, il y a un prénom écrit à l'encre noire: "Éloïse"
+>ce nom résonne étrangement en moi, comme familier
+>le soir même, lumière clignote, température chute, le stuff classique
+>pense que c'est juste le vent, l'électricité mal foutue
+>en pleine nuit, me réveille, une silhouette près de mon lit
+>trop sombre pour bien voir mais ça a l'air d'être une femme
+>elle chuchote "Tu connais mon nom maintenant"
+>panique.psd
+>le lendemain, j'essaie de revendre le livre, personne n'en veut
+>rentre chez moi, découvre mes murs griffés et un murmure constant
+>"Éloïse"
+>mfw je réalise que je suis maudit parce que j'ai lu ce nom
+>la silhouette apparaît plus clairement chaque nuit
+>aujourd'hui, décide de brûler le livre
+>cri terrifiant emplit ma chambre quand les flammes consument le livre
+>silence ensuite
+>plus de murmures, plus d'apparitions
+>me sens enfin libéré, mais le sommeil ne vient plus
+>chaque bruit me fait sursauter, chaque ombre pourrait être elle
+>je sais que c'est fini, mais le vrai cauchemar commence juste
+>mfw je vis dans la peur constante du retour d'Éloïse
+`;
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('pre');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>

@@ -1,18 +1,19 @@
 // vogue vogue sur les_flots
-const les_flots = [
+const maxStoire = 10;
+
+var les_flots = [
     "/c28.html",
     "/tordeuze.html",
-    "/lazy/stoire01.html",
-    "/lazy/stoire02.html",
-    "/lazy/stoire03.html",
     "/crakovsoup.html",
-    "/lazy/stoire04.html",
-    "/lazy/stoire05.html",
-    "/lazy/stoire06.html",
-    "/lazy/stoire07.html",
-    "/lazy/stoire08.html",
-    "/lazy/stoire09.html",
 ];
+
+for(let i=1;i <= maxStoire;i++){
+    if(i < 10){
+        les_flots.push(`/lazy/stoire0` + i + ".html");
+    }else if (i < 100){
+        les_flots.push(`/lazy/stoire` + i + ".html");
+    }
+}
 
 function flotter(){
     const navire = document.createElement('ul');

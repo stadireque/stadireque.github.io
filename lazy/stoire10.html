@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 010</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Marcrodi</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+Dans le village reculé de Montsombre, les brumes matinales ne se dissipaient jamais complètement, et les murmures nocturnes de la forêt environnante semblaient charrier des secrets anciens. L'histoire que je vais vous conter remonte à la nuit où le vieux moulin, abandonné depuis des décennies, s'est remis à tourner seul.
+
+Élise, une jeune femme curieuse et courageuse du village, fut attirée par le grincement mélodieux des ailes du moulin cette nuit-là. Poussée par un élan aussi irrépressible qu'inexplicable, elle traversa la forêt en suivant le sentier que ses ancêtres avaient foulé bien avant elle. La lune, cachée derrière un voile de nuages sombres, jetait une lumière fantomatique qui guidait ses pas incertains.
+
+Arrivée devant le moulin, Élise sentit une présence. Pas celle d'un vivant, mais comme si les pierres et le bois poussiéreux murmuraient, frémissaient d'une énergie étrangère. La porte, étonnamment entrebâillée, l'invita à entrer. À l'intérieur, le mécanisme usé semblait s'animer d'une volonté propre, grondant et tournant comme mus par une main invisible.
+
+Élise, saisie d'une peur mêlée de fascination, avança vers la machinerie. Elle remarqua alors, posée sur un rebord, une vielle montre à gousset qui n'était pas là des décennies auparavant. Lorsqu'elle la toucha, les engrenages du moulin s'arrêtèrent net, et un silence oppressant tomba sur le lieu. Le temps lui-même semblait suspendu.
+
+Soudain, une voix douce, mais glaçante, s'éleva derrière elle. "Merci d'avoir libéré le temps," dit-elle. Élise se retourna brusquement, mais ne vit que l'ombre qui semblait fuir à travers les murs du moulin, laissant derrière elle un froid mordant.
+
+Le lendemain matin, Élise fut retrouvée inconsciente près du vieux moulin, tenant fermement la montre à gousset. À son réveil, elle ne se souvenait de rien, si ce n'est d'une sensation de froid extrême. Le moulin, quant à lui, n'a plus jamais repris son activité nocturne.
+
+Les anciens du village murmuraient que cette nuit-là, Élise avait rencontré l'esprit du temps, gardien des heures volées et des moments oubliés. Mais personne n'osa plus s'approcher du moulin, et la montre disparut comme engloutie par la terre même de Montsombre. C'est ainsi que le mystère demeura entier, tissé dans le voile sombre de l'inexpliqué qui enveloppait toujours le village.`;      
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('p');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>
