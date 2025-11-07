@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stoire 012</title>
+    <link rel="shortcut icon" href="/img/r.ico" />
+    <link rel="stylesheet" href="/css/stoire.css" />
+    <link rel="stylesheet" href="/css/sw.css" />
+
+
+</head>
+
+<body>
+    <div class="ctn" id="ctn">
+        <h1>Verderdinatoire</h1>
+        <div id="hist"></div>
+        
+    </div>
+    <script src="/js/bateau.js"></script>
+    <script>
+        const ctnHist = document.getElementById('hist');
+        const txt = `
+>sois moi, 28 ans, vivant seul dans une vieille maison héritée de ma grand-mère
+>maison au milieu des bois, pas un chat à 10 km à la ronde
+>seul le vent et les animaux pour tenir compagnie
+>premier mois sans incident
+>une nuit, commence à entendre des bruits étranges venant du grenier
+>pense que c'est sûrement des bêtes, décide d'ignorer
+>les bruits deviennent plus fréquents chaque nuit
+>après 2 semaines, bruits se transforment en murmures
+>inquiet.exe
+>décoration de la maison commence à bouger toute seule
+>photos de famille tournées vers le mur, vases déplacés
+>décide finalement de monter au grenier
+>grande réticence, main sur la poignée de la porte du grenier tremblante
+>respire profondément, ouvre la porte
+>grenier plongé dans l'obscurité totale, seul le clair de lune éclaire à travers une petite fenêtre
+>murmures se transforment en chuchotements clairs
+>"sors... pars..."
+>frissons sur tout le corps
+>regarde autour avec une lampe torche
+>trouve un vieux coffre en bois caché sous des toiles d'araignées
+>l'ouvre avec précaution
+>dedans, un vieux journal et une petite boîte à musique en argent
+>le journal appartient à mon arrière-grande-tante, disparue sans laisser de traces
+>dernière entrée mentionne un esprit qu'elle a accidentellement libéré en ouvrant le coffre
+>coffre censé rester fermé pour "garder l'esprit enchaîné"
+>termine de lire, la boîte à musique se met à jouer seule
+>mélodie glaçante, jamais entendu rien de tel
+>murmures cessent immédiatement après la fin de la mélodie
+>silence total, comme si tout l'air avait été aspiré hors du grenier
+>claque la porte du grenier, descend en courant
+>depuis cette nuit, choses deviennent de plus en plus hostiles
+>objets se brisent, voix menaçantes dans les murs
+>quitte la maison, n'y retourne jamais
+>c'est là que je réalise que certains secrets devraient vraiment rester enterrés
+`;
+        txt.split("\n").forEach(l => {
+            if(l.trim().length > 0){
+                let p = document.createElement('pre');
+                p.appendChild(document.createTextNode(l.trim()));
+                ctnHist.appendChild(p);
+            }
+        });
+        flotter();
+    </script>
+</body>
+
+</html>
