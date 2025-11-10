@@ -53,6 +53,12 @@ function main(){
 
     void main() {
         gl_FragColor = texture2D(uSampler, vTextureCoord);
+        gl_FragColor = vec4(
+            -0.1 + gl_FragColor.r + (sin(vNumFrame/20.0))/2.0, 
+            -0.2 + gl_FragColor.g + (sin(vNumFrame/30.0))/3.0, 
+            -0.2 + gl_FragColor.b + (sin(vNumFrame/40.0))/4.0, 
+            1.0);
+        
         }
     `;
 
@@ -300,14 +306,13 @@ function draw(gl, progInfo, posBuffer, numFrame){
     // gl.drawArrays(gl.TRIANGLES, 0, 6);
 
 
-    for(let y=0; y < 20; y++){
+    for(let y=0; y < 25; y++){
         for(let x=0; x < 40; x++){
             const modelViewMatrix = mat4.create();
-            mat4.translate(modelViewMatrix, modelViewMatrix, [-50.0, -25.0, -40.0 + (20*(Math.sin(numFrame/30.0))) ]);
-            mat4.translate(modelViewMatrix, modelViewMatrix, [3.0*x, 3.0*y, 0.0]);
+            mat4.translate(modelViewMatrix, modelViewMatrix, [-40.0, -25.0, -30.0 + (20*(Math.sin(numFrame/50.0))) ]);
+            mat4.translate(modelViewMatrix, modelViewMatrix, [2.0*x, 2.0*y, 0.0]);
             mat4.rotate(modelViewMatrix, modelViewMatrix, numFrame/50.0, [0.01 + (Math.sin(numFrame/30.0))/5.0, 0.02, 0.03]); 
             
-
             gl.uniformMatrix4fv(progInfo.modViewMat,false,modelViewMatrix);
             gl.drawArrays(gl.TRIANGLES, 0, 4*6);
         }
