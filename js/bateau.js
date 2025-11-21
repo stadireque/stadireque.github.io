@@ -7,6 +7,8 @@ var tmp = [
     "/crakovsoup.html",
     "/regles.html",
     "/werkstadtengruppen.html",
+    "/y.html",
+    "/flibelieve.html",
 ];
 
 for(let i=1;i <= maxStoire;i++){
