@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Francis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg-color: #15140f;
+            --card-color: #24201a;
+            --text-color: #e6e6e6;
+            --accent-color: #f7c57a;
+            --muted-color: #a6a29a;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #30211c, var(--bg-color));
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: var(--card-color);
+            padding: 2.5rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .countdown {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .unit {
+            background: #201313;
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+        }
+
+        .value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .label {
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--muted-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--muted-color);
+        }
+
+        a{
+            color: #e6e6e6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Francis</h1>
+    <div>
+        <img src="./img/francis.gif">
+    </div>
+
+    <div class="countdown">
+        
+        <div class="unit">
+            <div class="value" id="years">0</div>
+            <div class="label">Années</div>
+        </div>
+        <div class="unit">
+            <div class="value" id="days">0</div>
+            <div class="label">Jours</div>
+        </div>
+        <div class="unit">
+            <div class="value" id="hours">0</div>
+            <div class="label">Heures</div>
+        </div>
+        <div class="unit">
+            <div class="value" id="minutes">0</div>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="unit">
+            <div class="value" id="seconds">0</div>
+            <div class="label">Secondes</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://www.twitch.tv/galdrakaarl">Mercredi 10 mars 2027 - 16h45</a>
+    </div>
+</div>
+
+<script>
+    // 🔧 Date cible (modifiable)
+    const targetDate = new Date("2027-03-10T16:45:21");
+    // datetime.datetime(2027, 3, 10, 16, 21, 45, 191505)
+
+    function updateCountdown() {
+        const now = new Date();
+        let diff = targetDate - now;
+
+        if (diff <= 0) {
+            document.querySelectorAll(".value").forEach(el => el.textContent = "0");
+            return;
+        }
+
+        const seconds = Math.floor(diff / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        const years = Math.floor(days / 365);
+
+        const remainingDays = days % 365;
+        const remainingHours = hours % 24;
+        const remainingMinutes = minutes % 60;
+        const remainingSeconds = seconds % 60;
+
+        document.getElementById("years").textContent = years;
+        document.getElementById("days").textContent = remainingDays;
+        document.getElementById("hours").textContent = remainingHours;
+        document.getElementById("minutes").textContent = remainingMinutes;
+        document.getElementById("seconds").textContent = remainingSeconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
